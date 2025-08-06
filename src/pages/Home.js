@@ -10,7 +10,7 @@ export default function Home() {
   ];
 
   const products = [
-    { id: 1, name: 'TAE(ต๊ะ)', price: '100 บาท', img: '/images/IMG_1345.jpg' },
+    { id: 1, name: 'TAE(ต๊ะ)', price: '100 บาท', img: '/images/rabbit.jpg' },
     { id: 2, name: 'ARM(อาร์ม)', price: '120 บาท', img: 'https://i.ibb.co/k1fGQ2k/2.jpg' },
     { id: 3, name: 'อาหารกระต่าย BOK DOK', price: '89 บาท', img: 'https://i.ibb.co/ZM9C9BN/3.jpg' },
     { id: 4, name: 'BOY(บอย)', price: '150 บาท', img: 'https://i.ibb.co/FBFh9F1/4.jpg' },

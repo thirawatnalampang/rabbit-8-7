@@ -256,7 +256,7 @@ app.put('/api/users/:id', async (req, res) => {
   const { id } = req.params;
   const { username, email, phone, address, gender, profileImage } = req.body;
 
-  console.log('Received gender:', gender);  // <-- เพิ่มดูว่ารับค่าถูกไหม
+  //console.log('Received gender:', gender);  // <-- เพิ่มดูว่ารับค่าถูกไหม
 
   try {
     const result = await pool.query(

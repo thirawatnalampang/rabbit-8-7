@@ -1,3 +1,4 @@
+// context/AuthContext.jsx
 import { createContext, useContext, useState, useEffect } from 'react';
 
 const AuthContext = createContext();
@@ -24,15 +25,17 @@ export function AuthProvider({ children }) {
       phone: userData.phone || '',
       address: userData.address || '',
       gender: userData.gender || '',
-      profileImage: userData.profileImage || userData.profile_image || '',  // ✅ เปลี่ยนเป็น '' ไม่ใช้ url
+      profileImage: userData.profileImage || userData.profile_image || '',
     };
     setUser(fullUserData);
   };
 
-  const logout = () => setUser(null);
+  const logout = () => {
+    setUser(null);
+    localStorage.removeItem('user');
+  };
 
   const loginWithGoogle = async () => {
-    // mock google login
     const googleUser = {
       user_id: 9999,
       username: 'google_user',
@@ -40,7 +43,7 @@ export function AuthProvider({ children }) {
       phone: '',
       address: '',
       gender: '',
-      profileImage: '',  // ✅ เปลี่ยนเป็น '' ไม่ใช้ url
+      profileImage: '',
     };
     setUser(googleUser);
   };

@@ -24,7 +24,7 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-black text-white p-4 flex justify-between items-center shadow-md">
+    <nav className="bg-black text-white p-4 flex justify-between items-center shadow-md" key={user?.user_id || 'guest'}>
       <button
         onClick={() => navigate(-1)}
         className="text-white mr-4 hover:text-teal-300 transition-colors duration-300"
