@@ -35,6 +35,7 @@ export function AuthProvider({ children }) {
   };
 
   const loginWithGoogle = async () => {
+    // ตัวอย่างจำลอง login ด้วย Google
     const googleUser = {
       user_id: 9999,
       username: 'google_user',

@@ -162,12 +162,6 @@ export default function ProfilePage() {
   return (
     <div className="flex h-screen bg-black text-white">
       <div className="w-20 md:w-48 bg-black flex flex-col items-center py-6 space-y-10">
-        {/* เอารูปโปรไฟล์ออกเลย */}
-        {/* <img
-          src={previewUrl || user.profileImage || 'https://via.placeholder.com/100'}
-          alt="profile"
-          className="w-12 h-12 md:w-16 md:h-16 rounded-full object-cover"
-        /> */}
         <div className="text-sm md:text-base font-semibold">Profile</div>
       </div>
 

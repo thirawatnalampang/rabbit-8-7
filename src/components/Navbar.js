@@ -1,6 +1,6 @@
-// components/Navbar.jsx
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { useState } from 'react';
 import {
   FaHome,
   FaPaw,
@@ -10,22 +10,23 @@ import {
   FaSearch,
   FaArrowLeft,
 } from 'react-icons/fa';
-import { useState } from 'react';
 
 export default function Navbar() {
   const { user } = useAuth();
   const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState('');
-  
-  
+
   const handleSearch = () => {
     if (searchQuery.trim() !== '') {
       navigate(`/search?query=${encodeURIComponent(searchQuery.trim())}`);
     }
   };
- 
+
   return (
-    <nav className="bg-black text-white p-4 flex justify-between items-center shadow-md" key={user?.user_id || 'guest'}>
+    <nav
+      className="bg-black text-white p-4 flex justify-between items-center shadow-md"
+      key={user?.user_id || 'guest'}
+    >
       <button
         onClick={() => navigate(-1)}
         className="text-white mr-4 hover:text-teal-300 transition-colors duration-300"
@@ -57,7 +58,11 @@ export default function Navbar() {
         <Link to="/pets" title="สัตว์เลี้ยง" className="hover:text-teal-300 transition-colors duration-300">
           <FaPaw size={26} />
         </Link>
-        <Link to="/cart" title="ตะกร้าสินค้า" className="hover:text-teal-300 transition-colors duration-300">
+        <Link
+          to="/cart"
+          title="ตะกร้าสินค้า"
+          className="hover:text-teal-300 transition-colors duration-300"
+        >
           <FaShoppingCart size={26} />
         </Link>
         <Link
@@ -69,7 +74,11 @@ export default function Navbar() {
         </Link>
 
         {user ? (
-          <Link to="/profile" title="โปรไฟล์" className="hover:text-teal-300 transition-colors duration-300">
+          <Link
+            to="/profile"
+            title="โปรไฟล์"
+            className="hover:text-teal-300 transition-colors duration-300"
+          >
             {user.profileImage && user.profileImage.trim() !== '' ? (
               <img
                 src={`${user.profileImage}?t=${Date.now()}`}
@@ -81,7 +90,11 @@ export default function Navbar() {
             )}
           </Link>
         ) : (
-          <Link to="/login" title="เข้าสู่ระบบ" className="hover:text-teal-300 transition-colors duration-300">
+          <Link
+            to="/login"
+            title="เข้าสู่ระบบ"
+            className="hover:text-teal-300 transition-colors duration-300"
+          >
             เข้าสู่ระบบ
           </Link>
         )}

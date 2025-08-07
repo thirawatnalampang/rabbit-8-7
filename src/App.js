@@ -32,7 +32,7 @@ function App() {
     <>
       {/* ไม่ต้องส่ง user ผ่าน props เพราะใช้ Context */}
       <Navbar />
-
+       
       <div className="p-4">
         <Routes>
           <Route path="/" element={<Home />} />
